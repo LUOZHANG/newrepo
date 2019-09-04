@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        ul li {
+            width: 50px;
+            height: 50px;
+            list-style: none;
+            text-align: center;
+            line-height: 50px;
+            margin-right: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            display: none;
+        }
+        .list {
+            margin-top: 20px;
+        }
+        li:nth-child(1){
+            background: red;
+            border: 1px solid red;
+        }
+        li:nth-child(2){
+            background: blue;
+            border: 1px solid blue;
+        }
+        li:nth-child(3){
+            background: green;
+            border: 1px solid green;
+        }
+         li:nth-child(4){
+            background: pink;
+            border: 1px solid pink;
+            
+        }
+         .show{
+            display: inline-block;
+        }
+       .colors{
+           width: 240px;
+           text-align: center;
+           margin-left: 40px;
+           margin-top: 20px;
+           user-select: none;
+       }
+    </style>
+</head>
+<body>
+    <div class="colors">   
+        <label for="red">red</label><input type="checkbox" name="color" id="red" > 
+       <label for="blue">blue</label> <input type="checkbox" name="color" id="blue">
+       <label for="green">green</label> <input type="checkbox" name="color" id="green">
+       <label for="pink">pink</label> <input type="checkbox" name="color" id="pink">
+    </div>
+    <div class="list">
+        <ul class="colorList">
+            <li class="show">red</li>
+            <li>blue</li>
+            <li>green</li>
+            <li>pink</li>
+        </ul>
+    </div>
+
+
+    <script>
+        var colors = document.querySelectorAll("[type='checkbox']");
+        // console.log(colors[1].checked);
+        var list = document.querySelector(".colorList");
+        var listArr = list.children;
+        // console.log(listArr);
+        for(var i = 0;i<colors.length;i++){
+            colors[i].onchange = function(){
+                for(var i = 0;i<colors.length;i++){
+                    if(colors[i].checked){
+                        listArr[i].className = "show"
+                    }else{
+                        listArr[i].className = "";
+                    }
+                }
+            }
+           
+        }
+    
+    
+    </script>
+</body>
+</html>

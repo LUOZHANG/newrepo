@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var table = document.createElement("table");
+        table.innerHTML = `<thead>
+                <tr>
+                    <th>name</th>
+                    <th>age</th>
+                    <th>sex</th>
+                </tr>
+        
+                        </thead>`;
+        var tbody = document.createElement("tbody");
+        var tr = document.createElement("tr");
+        var td = document.createElement("td");
+            td.innerText = 'dddd';
+        var td1 = td.cloneNode(true);
+            td1.innerText = 23;
+        var td2 = td.cloneNode(true);
+            td2.innerText = "nv";
+            tr.appendChild(td);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+        table.appendChild(tbody);
+        var script = document.querySelector("script");
+        document.body.insertBefore(table,script);
+    
+    </script>
+</body>
+</html>

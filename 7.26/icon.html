@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var img = document.createElement("img");
+        // img.src = "./imgs/jianyu.png";
+        var list = [
+                { name: '红虾', src: 'xia.png' },
+                { name: '剑鱼', src: 'jianyu.png' },
+                { name: '酒', src: 'jiu.png' },
+                { name: '龙虾', src: 'longxia.png' },
+                { name: '猕猴桃', src: 'mihoutao.png' },
+                { name: '牛油果', src: 'niuyouguo.png' },
+                { name: '葡萄', src: 'putao.png' },
+                { name: '水果', src: 'shuiguo.png' },
+                { name: '乌贼鱼', src: 'wuzeiyu.png' },
+                { name: '西红柿', src: 'xihongshi.png' },
+                { name: '西蓝花', src: 'xilanhua.png' },
+                { name: '香蕉', src: 'xiangjiao.png' },
+                { name: '樱桃', src: 'yingtao.png' },
+                { name: '圆白菜', src: 'yuanbaicai.png' },
+            ]
+
+
+        // img.onclick = function(){
+        //     var num = Math.floor(Math.random()*list.length);
+        //     this.src = `./imgs/${list[num].src}`;
+        //     this.alt = `./imgs/${list[num].name}`;
+        //     this.title = `${list[num].name}`;
+        // }
+        // document.body.appendChild(img);
+
+
+        for(var i = 0 ;i<list.length;i++){
+            var img = document.createElement("img");
+            img.src = `./imgs/${list[i].src}`;
+            img.onclick = function(){
+            var num = Math.floor(Math.random()*list.length);
+            this.src = `./imgs/${list[num].src}`;
+            this.alt = `./imgs/${list[num].name}`;
+            this.title = `${list[num].name}`;
+        }
+            document.body.appendChild(img);
+        }
+    </script>
+</body>
+</html>
